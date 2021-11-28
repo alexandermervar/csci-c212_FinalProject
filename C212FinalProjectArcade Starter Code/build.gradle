@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+}
+
+group 'edu.iu.c212'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+dependencies {
+    implementation 'org.jsoup:jsoup:1.14.3'
+    implementation 'com.google.code.gson:gson:2.8.9'
+}
+
+application {
+    mainClass = 'edu.iu.c212.ArcadeMain'
+}
+
+run {
+    standardInput = System.in
+}
