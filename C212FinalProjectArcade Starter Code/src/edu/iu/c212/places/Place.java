@@ -1,5 +1,5 @@
 package edu.iu.c212.places;
 
-public class Place {
+public abstract class Place {
     
 }
