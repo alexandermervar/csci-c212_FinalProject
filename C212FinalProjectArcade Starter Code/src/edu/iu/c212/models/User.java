@@ -10,15 +10,11 @@ public class User {
     public User(String username, double balance, List<Item> inventory) {
         this.username = username;
         this.setBalance(balance);
-        this.setInventory(inventory); 
+        this.inventory = inventory; 
     }
 
     public List<Item> getInventory() {
         return inventory;
-    }
-
-    public void setInventory(List<Item> inventory) {
-        this.inventory = inventory;
     }
 
     public double getBalance() {
