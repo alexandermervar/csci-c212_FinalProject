@@ -42,7 +42,7 @@ public class HttpUtils {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to get hangman word due to exception.");
+            System.out.println("Unable to get trivia question due to exception.");
             throw e;
         }
     }
