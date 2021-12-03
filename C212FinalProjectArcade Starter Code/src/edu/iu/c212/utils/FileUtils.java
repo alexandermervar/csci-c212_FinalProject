@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class FileUtils {
-    private static File file = new File("your-file-location-here");
+    private static File file = new File("C212FinalProjectArcade Starter Code/src/edu/iu/c212/utils/Users.txt");
 
     // line format:
     // user_name|balance|item1,item2,item3

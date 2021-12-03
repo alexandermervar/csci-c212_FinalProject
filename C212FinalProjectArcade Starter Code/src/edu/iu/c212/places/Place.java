@@ -13,6 +13,6 @@ public abstract class Place {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Location: " + placeName + "Entry fee: " + entryFee + "$ ";
+        return "Location: " + placeName + "Entry fee: $" + entryFee;
     }
 }
