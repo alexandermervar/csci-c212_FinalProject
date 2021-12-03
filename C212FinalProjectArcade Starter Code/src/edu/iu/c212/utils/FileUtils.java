@@ -26,7 +26,7 @@ public class FileUtils {
         // loop through the list of the users and write each user to the file
         PrintWriter out = new PrintWriter(file);
         for (User user : users) {
-            String userData = user.getUsername() + "|" + user.getBalance() + "|";
+            String userData = user.getUsername().replace("|", "") + "|" + user.getBalance() + "|";
 
             for (Item item : user.getInventory()) {
                 userData += item.name()+ ",";
