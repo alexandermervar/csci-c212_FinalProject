@@ -26,6 +26,11 @@ public enum Item {
         this.value = value;
     }
 
+    // getters
+    public String getName() {
+        return readableName;
+    }
+
     @Override
     public String toString() {
         return "Name: " + readableName + " Price: $" + value;
