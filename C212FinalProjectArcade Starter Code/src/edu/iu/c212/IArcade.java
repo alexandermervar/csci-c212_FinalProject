@@ -6,6 +6,7 @@ import edu.iu.c212.models.User;
 import edu.iu.c212.places.Place;
 
 public interface IArcade {
+    
     List<User> getUserSaveDataFromFile();
 
     void saveUsersToFile();
