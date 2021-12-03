@@ -12,9 +12,42 @@ public abstract class Place {
     private boolean isGame;
 
     abstract void onEnter(User user);
-
+    
     @Override
     public String toString() {
         return "Location: " + placeName + "Entry fee: $" + entryFee + "Game?: " + isGame;
     }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
+    }
+
+    public double getEntryFee() {
+        return entryFee;
+    }
+
+    public void setEntryFee(double entryFee) {
+        this.entryFee = entryFee;
+    }
+
+    public Arcade getArcade() {
+        return arcade;
+    }
+
+    public void setArcade(Arcade arcade) {
+        this.arcade = arcade;
+    }
+
+    public boolean getIsGame() {
+        return isGame;
+    }
+
+    public void setIsGame(boolean isGame) {
+        this.isGame = isGame;
+    }
+
 }
