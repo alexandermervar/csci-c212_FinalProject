@@ -7,12 +7,14 @@ public abstract class Place {
     private String placeName;
     private Arcade arcade;
     private double entryFee;
+    
+    // Added isGame variable for completeed functionality of toString()
+    private boolean isGame;
 
     abstract void onEnter(User user);
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Location: " + placeName + "Entry fee: $" + entryFee;
+        return "Location: " + placeName + "Entry fee: $" + entryFee + "Game?: " + isGame;
     }
 }

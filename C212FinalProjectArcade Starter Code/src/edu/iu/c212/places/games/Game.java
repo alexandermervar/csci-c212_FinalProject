@@ -1,9 +1,9 @@
 package edu.iu.c212.places.games;
 
 import edu.iu.c212.models.User;
+import edu.iu.c212.places.Place;
 
-public abstract class Game {
+public abstract class Game extends Place {
     
-    // The onEnter function, which takes an object of the class User as a parameter.
-    abstract void onEnter(User user);
+    //TODO: Add shared functionality between games, here
 }
