@@ -1,6 +1,5 @@
 package edu.iu.c212.places;
 
-import java.util.Arrays;
 import java.util.List;
 
 import edu.iu.c212.models.User;
