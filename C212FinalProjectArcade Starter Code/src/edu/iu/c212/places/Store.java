@@ -1,8 +1,6 @@
 package edu.iu.c212.places;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.EnumSet;
 import java.util.List;
 
 import edu.iu.c212.models.Item;
@@ -67,6 +65,7 @@ public class Store extends Place{
             if (confirmation) {
                 user.setBalance(user.getBalance() + sellPrice);
                 user.getInventory().remove(buyChoice);
+                getArcade().saveUsersToFile();
             }
         }
 
@@ -91,6 +90,7 @@ public class Store extends Place{
             if (confirmation) {
                 user.setBalance(user.getBalance() - buyChoice.getValue());
                 user.getInventory().add(buyChoice);
+                getArcade().saveUsersToFile();
             }
         }
     }
