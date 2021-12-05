@@ -29,10 +29,9 @@ public class Store extends Place{
     @Override
     public void onEnter(User user) {
         List<StoreAction> choices = Arrays.asList(StoreAction.class.getEnumConstants());
-        StoreAction choice = StoreAction.BUY;
 
-        while (choice != StoreAction.LEAVE) {
-            choice = ConsoleUtils.printMenuToConsole("Store",choices, true);
+        while (true) {
+            StoreAction choice = ConsoleUtils.printMenuToConsole("Store",choices, true);
 
             switch (choice) {
                 case BUY:
@@ -41,6 +40,8 @@ public class Store extends Place{
                 case SELL:
                     sellMenu(user);
                     break;
+                case LEAVE:
+                    getArcade().transitionArcadeState(Places.LOBBY);
                 default:
                     break;
             }
@@ -92,6 +93,6 @@ public class Store extends Place{
                 user.getInventory().add(buyChoice);
             }
         }
-
     }
+
 }
