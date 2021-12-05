@@ -3,6 +3,7 @@ package edu.iu.c212.places.games;
 import java.util.Scanner;
 
 import edu.iu.c212.models.User;
+import edu.iu.c212.places.Places;
 
 public class GuessTheNumberGame extends Game{
 

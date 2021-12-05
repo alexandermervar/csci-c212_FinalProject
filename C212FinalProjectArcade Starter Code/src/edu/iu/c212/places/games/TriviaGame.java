@@ -49,7 +49,7 @@ public class TriviaGame extends Game{
             // Shuffle the answers List
             Collections.shuffle(answers);
 
-
+            // Fixed bug
             String userGuess = ConsoleUtils.printMenuToConsole(question.getQuestion(), answers, true);
 
             if (userGuess.equals(question.getCorrectAnswer())) {
