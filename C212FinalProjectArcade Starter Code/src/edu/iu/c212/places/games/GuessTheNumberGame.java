@@ -14,7 +14,6 @@ public class GuessTheNumberGame extends Game{
     public GuessTheNumberGame(String placeName) {
         setPlaceName(placeName);
         setEntryFee(5.0);
-        setIsGame(true);
         setPrize(10.0);
     }
 
@@ -49,8 +48,9 @@ public class GuessTheNumberGame extends Game{
             System.out.println("Congratulations, you correctly guessed the number!");
             System.out.println("You guessed it within " + numberOfGuesses + " tries, so you get $10");
             user.setBalance(user.getBalance() + getPrize());
-            saveSingularUser(user);
             System.out.println("----------");
+            // saveSingularUser(user);
+            getArcade().saveUsersToFile();
             getArcade().transitionArcadeState(Places.LOBBY);
         } else {
             System.out.println("You didn't guess the number in time.");
