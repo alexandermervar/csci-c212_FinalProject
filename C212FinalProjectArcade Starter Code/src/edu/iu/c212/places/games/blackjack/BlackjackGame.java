@@ -8,7 +8,6 @@ public class BlackjackGame extends Game {
     public BlackjackGame(String placeName) {
         setPlaceName(placeName);
         setEntryFee(0); // Not final value
-        setIsGame(true);
     }
 
     @Override

@@ -8,7 +8,6 @@ public class HangmanGame extends Game{
     public HangmanGame(String placeName) {
         setPlaceName(placeName);
         setEntryFee(0);
-        setIsGame(true);
     }
 
     @Override

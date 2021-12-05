@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.swing.plaf.basic.BasicTreeUI.TreeCancelEditingAction;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Places;
 import edu.iu.c212.utils.ConsoleUtils;
@@ -21,7 +22,6 @@ public class TriviaGame extends Game{
     public TriviaGame(String placeName) {
         setPlaceName(placeName);
         setEntryFee(0.0);
-        setIsGame(true);
         setPrize(2.0);
     }
 
@@ -63,7 +63,8 @@ public class TriviaGame extends Game{
                 score++;
                 System.out.println("You got it right! You got $2.");
                 user.setBalance(user.getBalance() + getPrize());
-                saveSingularUser(user);
+                // saveSingularUser(user);
+                getArcade().saveUsersToFile();
             } else {
                 System.out.println("You got it wrong :( The correct answer is " + question.getCorrectAnswer());
             }
