@@ -15,7 +15,7 @@ public abstract class Place {
     
     @Override
     public String toString() {
-        return "Location: " + placeName + "Entry fee: $" + entryFee + "Game?: " + isGame;
+        return placeName + " (Cost: $" + entryFee + ") Game? " + isGame;
     }
 
     public String getPlaceName() {
