@@ -27,7 +27,7 @@ public class Arcade implements IArcade{
         currentUser = getUserOnArcadeEntry();
         allUsers = getUserSaveDataFromFile();
         allPlaces = new ArrayList<Place>();
-        
+
         allPlaces.add(new Lobby(Places.LOBBY));
         allPlaces.add(new Store(Places.STORE));
         allPlaces.add(new Inventory(Places.INVENTORY));
@@ -35,6 +35,8 @@ public class Arcade implements IArcade{
         allPlaces.add(new TriviaGame(Places.TRIVIAGAME));
         allPlaces.add(new BlackjackGame(Places.BLACKJACKGAME));
         allPlaces.add(new HangmanGame(Places.HANGMANGAME));
+
+        transitionArcadeState(Places.LOBBY);
 
     }
 
