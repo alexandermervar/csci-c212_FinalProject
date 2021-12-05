@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import edu.iu.c212.models.User;
+import edu.iu.c212.places.Places;
 import edu.iu.c212.utils.ConsoleUtils;
 import edu.iu.c212.utils.http.*;
 
@@ -49,9 +50,9 @@ public class TriviaGame extends Game{
             Collections.shuffle(answers);
 
 
-            int userGuess = Integer.parseInt(ConsoleUtils.printMenuToConsole(question.getQuestion(), answers, true));
+            String userGuess = ConsoleUtils.printMenuToConsole(question.getQuestion(), answers, true);
 
-            if (answers.get(userGuess - 1).equals(question.getCorrectAnswer())) {
+            if (userGuess.equals(question.getCorrectAnswer())) {
                 score++;
                 System.out.println("You got it right! You got $2.");
                 user.setBalance(user.getBalance() + getPrize());
@@ -69,7 +70,7 @@ public class TriviaGame extends Game{
             System.out.println("Aww, good try. You got " + score + " questions right.");
         }
 
-        return;
+        getArcade().transitionArcadeState(Places.LOBBY);
     
     }
 }

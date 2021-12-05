@@ -44,13 +44,12 @@ public class GuessTheNumberGame extends Game{
             user.setBalance(user.getBalance() + getPrize());
             saveSingularUser(user);
             System.out.println("----------");
-            return;
+            getArcade().transitionArcadeState(Places.LOBBY);
         } else {
             System.out.println("You didn't guess the number in time.");
             System.out.println("You lost $" + getEntryFee() + ".");
             System.out.println("----------");
-            return;
-        }
+            getArcade().transitionArcadeState(Places.LOBBY);        }
 
     }
 }
