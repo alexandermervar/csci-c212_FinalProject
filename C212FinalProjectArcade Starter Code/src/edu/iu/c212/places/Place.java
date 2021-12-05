@@ -11,7 +11,7 @@ public abstract class Place {
     // Added isGame variable for completeed functionality of toString()
     private boolean isGame;
 
-    abstract void onEnter(User user);
+    public abstract void onEnter(User user);
     
     @Override
     public String toString() {
