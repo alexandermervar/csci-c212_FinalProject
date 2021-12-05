@@ -1,7 +1,12 @@
 package edu.iu.c212;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.iu.c212.models.User;
+
 public class ArcadeMain {
     public static void main(String[] args) {
-        new Arcade();
+        Arcade arcade = new Arcade();
     }
 }
