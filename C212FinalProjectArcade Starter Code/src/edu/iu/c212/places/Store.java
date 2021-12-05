@@ -9,7 +9,7 @@ import edu.iu.c212.models.Item;
 import edu.iu.c212.models.User;
 import edu.iu.c212.utils.ConsoleUtils;
 
-public class Store extends Place {
+public class Store extends Place{
 
     private enum StoreAction{
         BUY, SELL, LEAVE;
@@ -22,7 +22,7 @@ public class Store extends Place {
 
     public Store(String placeName) {
         setPlaceName(placeName);
-        setEntryFee(0);
+        setEntryFee(0.0);
         setIsGame(false);
     }
 
