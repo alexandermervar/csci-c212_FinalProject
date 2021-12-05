@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.management.relation.RoleNotFoundException;
-
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Places;
 import edu.iu.c212.places.games.Game;
