@@ -1,7 +1,9 @@
 package edu.iu.c212;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Place;
@@ -63,8 +65,24 @@ public class Arcade implements IArcade{
     @Override
     public User getUserOnArcadeEntry() {
         // TODO Auto-generated method stub
+        Scanner sc = new Scanner(System.in);
 
-        return null;
+        System.out.println("Please enter your username");
+        String username = sc.nextLine();
+
+        for (User user : allUsers) {
+            if (user.getUsername().equals(username)) {
+                System.out.println("Welcome back " + username + "!");
+                return user;
+            }
+        }
+
+        User newUser = new User(username, 500, new ArrayList<>());
+        allUsers.add(newUser);
+        saveUsersToFile();
+        System.out.println("Welcom " + username + "!");
+
+        return newUser;
     }
 
     @Override
