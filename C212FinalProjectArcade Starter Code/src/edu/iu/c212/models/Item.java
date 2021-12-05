@@ -31,6 +31,10 @@ public enum Item {
         return readableName;
     }
 
+    public double getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return "Name: " + readableName + " Price: $" + value;
