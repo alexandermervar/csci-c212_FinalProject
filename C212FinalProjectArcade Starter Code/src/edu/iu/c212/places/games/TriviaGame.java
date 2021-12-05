@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.swing.plaf.basic.BasicTreeUI.TreeCancelEditingAction;
+
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Places;
 import edu.iu.c212.utils.ConsoleUtils;
@@ -16,10 +18,15 @@ public class TriviaGame extends Game{
     private int currentQuestionIndex;
     private int score;
 
+    public TriviaGame(String placeName) {
+        setPlaceName(placeName);
+        setEntryFee(0.0);
+        setIsGame(true);
+        setPrize(2.0);
+    }
+
     @Override
     public void onEnter(User user) {
-        setPrize(2.0);
-        setEntryFee(0.0);
 
         // Retrieve Questions
         try {
