@@ -18,7 +18,7 @@ public class Lobby extends Place{
 
         List<Place> placeOptions = getArcade().getAllPlaces();
 
-        Place selectedPlace = ConsoleUtils.printMenuToConsole("Welcome to the Arcade! Your balance is $" + user.getBalance() +". What place would you like to go from the list?", placeOptions, true);
+        Place selectedPlace = ConsoleUtils.printMenuToConsole("Welcome to the Arcade, " + user.getUsername() + "! Your balance is $" + user.getBalance() +". What place would you like to go from the list?", placeOptions, true);
 
         getArcade().transitionArcadeState(selectedPlace.getPlaceName());
     }
