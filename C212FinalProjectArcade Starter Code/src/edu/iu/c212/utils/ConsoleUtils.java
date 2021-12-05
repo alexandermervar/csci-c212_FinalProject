@@ -48,7 +48,7 @@ public class ConsoleUtils {
 
         if (shouldUserSelectAnOption) {
             System.out.println("Please select an option by its number:");
-            int enteredIndex = readIntegerLineFromConsoleOrElseComplainAndRetry(number -> number - 1 >= 0 && number - 1 < allplaces.size(), "You need to enter a valid option") - 1;
+            int enteredIndex = readIntegerLineFromConsoleOrElseComplainAndRetry(number -> number - 1 >= 0 && number - 1 < options.size(), "You need to enter a valid option") - 1;
             return options.get(enteredIndex);
         } else return null;
     }
