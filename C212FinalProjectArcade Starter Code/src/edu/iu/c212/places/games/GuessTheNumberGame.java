@@ -1,9 +1,8 @@
 package edu.iu.c212.places.games;
 
-import java.util.Scanner;
-
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Places;
+import edu.iu.c212.utils.ConsoleUtils;
 
 public class GuessTheNumberGame extends Game{
 
@@ -16,9 +15,7 @@ public class GuessTheNumberGame extends Game{
     @Override
     public void onEnter(User user) {
 
-        Scanner sc = new Scanner(System.in);
-
-        int numberToGuess = (int) (Math.random() * 5);
+        int numberToGuess = (int) (Math.random() * 100);
         int userGuess = -1;
         int numberOfGuesses = 0;
 
@@ -29,7 +26,7 @@ public class GuessTheNumberGame extends Game{
         while (userGuess != numberToGuess && numberOfGuesses < 5) {
             System.out.println("What's your guess?");
             
-            userGuess = sc.nextInt();
+            userGuess = ConsoleUtils.readIntegerLineFromConsoleOrElseComplainAndRetry(number -> number >= 0 && number <= 100, "Number must be within range!");
             numberOfGuesses++;
 
             if (userGuess != numberToGuess) {
