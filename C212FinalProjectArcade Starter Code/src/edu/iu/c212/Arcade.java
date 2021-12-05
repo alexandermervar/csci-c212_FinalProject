@@ -3,7 +3,6 @@ package edu.iu.c212;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Exit;
@@ -16,6 +15,7 @@ import edu.iu.c212.places.games.GuessTheNumberGame;
 import edu.iu.c212.places.games.TriviaGame;
 import edu.iu.c212.places.games.blackjack.BlackjackGame;
 import edu.iu.c212.places.games.hangman.HangmanGame;
+import edu.iu.c212.utils.ConsoleUtils;
 import edu.iu.c212.utils.FileUtils;
 
 public class Arcade implements IArcade{
@@ -69,7 +69,7 @@ public class Arcade implements IArcade{
     public void transitionArcadeState(String newPlaceNameToGoTo) {
         
         double userBalance = currentUser.getBalance();
-        
+
         for (Place place : allPlaces) {
             if (place.getPlaceName().equals(newPlaceNameToGoTo)) {
                 double entryFee = place.getEntryFee();
@@ -88,10 +88,9 @@ public class Arcade implements IArcade{
 
     @Override
     public User getUserOnArcadeEntry() {
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Please enter your username");
-        String username = sc.nextLine();
+        String username = ConsoleUtils.readLineFromConsole();
 
         for (User user : allUsers) {
             if (user.getUsername().equals(username)) {
