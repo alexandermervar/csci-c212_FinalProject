@@ -82,7 +82,6 @@ public class Arcade implements IArcade{
 
     @Override
     public User getUserOnArcadeEntry() {
-        // TODO Auto-generated method stub
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Please enter your username");
