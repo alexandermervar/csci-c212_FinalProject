@@ -1,7 +1,5 @@
 package edu.iu.c212.places.games;
 
-import edu.iu.c212.utils.*;
-
 import java.util.List;
 
 import edu.iu.c212.models.User;
@@ -11,6 +9,9 @@ public abstract class Game extends Place {
     
     private double prize;
 
+    public Game() {
+        setIsGame(true);
+    }
     public double getPrize() {
         return prize;
     }
@@ -19,6 +20,7 @@ public abstract class Game extends Place {
         this.prize = prize;
     }
 
+    // Method unecessary?
     // Calls Aracade.saveUsersToFile()
     public void saveSingularUser(User user) {
         List<User> oldUsers = getArcade().getUserSaveDataFromFile();
@@ -40,7 +42,7 @@ public abstract class Game extends Place {
             oldUsers.add(user);
         }
 
-        getArcade().saveUsersToFile(oldUsers);
+        // getArcade().saveUsersToFile(oldUsers); Causes errors
     }
 
 }
