@@ -1,6 +1,5 @@
 package edu.iu.c212.places;
 
-<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.List;
 
