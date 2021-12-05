@@ -19,6 +19,7 @@ public abstract class Game extends Place {
         this.prize = prize;
     }
 
+    // Calls Aracade.saveUsersToFile()
     public void saveSingularUser(User user) {
         List<User> oldUsers = getArcade().getUserSaveDataFromFile();
 
@@ -39,7 +40,7 @@ public abstract class Game extends Place {
             oldUsers.add(user);
         }
 
-        getArcade().saveUserSaveDataToFile(oldUsers);
+        getArcade().saveUsersToFile(oldUsers);
     }
 
 }
