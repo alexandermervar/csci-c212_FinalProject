@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.iu.c212.models.User;
+import edu.iu.c212.places.Exit;
 import edu.iu.c212.places.Inventory;
 import edu.iu.c212.places.Lobby;
 import edu.iu.c212.places.Place;
@@ -35,6 +36,7 @@ public class Arcade implements IArcade{
         allPlaces.add(new TriviaGame(Places.TRIVIAGAME));
         allPlaces.add(new BlackjackGame(Places.BLACKJACKGAME));
         allPlaces.add(new HangmanGame(Places.HANGMANGAME));
+        allPlaces.add(new Exit(Places.EXIT));
 
         for (Place place : allPlaces) {
             place.setArcade(this);
@@ -67,11 +69,7 @@ public class Arcade implements IArcade{
     public void transitionArcadeState(String newPlaceNameToGoTo) {
         
         double userBalance = currentUser.getBalance();
-
-        if (newPlaceNameToGoTo.equals(Places.LEAVE)) {
-            System.exit(0);
-        }
-
+        
         for (Place place : allPlaces) {
             if (place.getPlaceName().equals(newPlaceNameToGoTo)) {
                 double entryFee = place.getEntryFee();

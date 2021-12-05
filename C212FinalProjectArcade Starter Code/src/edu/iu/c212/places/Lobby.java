@@ -17,10 +17,10 @@ public class Lobby extends Place{
     @Override
     public void onEnter(User user) {
 
-        List<String> placeOptions = Arrays.asList(Places.ALLPLACES);
+        List<Place> placeOptions = getArcade().getAllPlaces();
 
-        String selectedPlace = ConsoleUtils.printMenuToConsole("Welcome to the Arcade! Your balance is $" + user.getBalance() +". What place would you like to go from the list?", placeOptions, true);
+        Place selectedPlace = ConsoleUtils.printMenuToConsole("Welcome to the Arcade! Your balance is $" + user.getBalance() +". What place would you like to go from the list?", placeOptions, true);
 
-        getArcade().transitionArcadeState(selectedPlace);
+        getArcade().transitionArcadeState(selectedPlace.getPlaceName());
     }
 }
