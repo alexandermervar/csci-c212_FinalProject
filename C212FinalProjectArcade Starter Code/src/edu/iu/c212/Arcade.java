@@ -24,8 +24,8 @@ public class Arcade implements IArcade{
     private List<Place> allPlaces;
 
     public Arcade() {
-        currentUser = getUserOnArcadeEntry();
         allUsers = getUserSaveDataFromFile();
+        currentUser = getUserOnArcadeEntry();
         allPlaces = new ArrayList<Place>();
 
         allPlaces.add(new Lobby(Places.LOBBY));
@@ -35,6 +35,10 @@ public class Arcade implements IArcade{
         allPlaces.add(new TriviaGame(Places.TRIVIAGAME));
         allPlaces.add(new BlackjackGame(Places.BLACKJACKGAME));
         allPlaces.add(new HangmanGame(Places.HANGMANGAME));
+
+        for (Place place : allPlaces) {
+            place.setArcade(this);
+        }
 
         transitionArcadeState(Places.LOBBY);
 
@@ -63,6 +67,10 @@ public class Arcade implements IArcade{
     public void transitionArcadeState(String newPlaceNameToGoTo) {
         
         double userBalance = currentUser.getBalance();
+
+        if (newPlaceNameToGoTo.equals(Places.LEAVE)) {
+            System.exit(0);
+        }
 
         for (Place place : allPlaces) {
             if (place.getPlaceName().equals(newPlaceNameToGoTo)) {
