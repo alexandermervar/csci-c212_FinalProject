@@ -1,5 +1,6 @@
 package edu.iu.c212.places;
 
+<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,8 +23,5 @@ public class Lobby extends Place{
         String selectedPlace = ConsoleUtils.printMenuToConsole("Welcome to the Arcade! Your balance is $" + user.getBalance() +". What place would you like to go from the list?", placeOptions, true);
 
         getArcade().transitionArcadeState(selectedPlace);
-        
     }
-    
-
 }

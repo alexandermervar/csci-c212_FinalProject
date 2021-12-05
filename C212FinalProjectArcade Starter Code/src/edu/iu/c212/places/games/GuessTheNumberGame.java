@@ -11,10 +11,16 @@ public class GuessTheNumberGame extends Game{
     private int numberOfGuesses = 0;
     private int userGuess;
 
+    public GuessTheNumberGame(String placeName) {
+        setPlaceName(placeName);
+        setEntryFee(5.0);
+        setIsGame(true);
+        setPrize(10.0);
+    }
+
     @Override
     public void onEnter(User user) {
-        setPrize(10.0);
-        setEntryFee(5.0);
+
         numberToGuess = (int) (Math.random() * 100);
 
         System.out.println("Welcome to Guess The Number. You'll be guessing a number between 0 and 100.");

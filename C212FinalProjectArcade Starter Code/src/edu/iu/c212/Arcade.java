@@ -6,8 +6,15 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.iu.c212.models.User;
+import edu.iu.c212.places.Inventory;
+import edu.iu.c212.places.Lobby;
 import edu.iu.c212.places.Place;
 import edu.iu.c212.places.Places;
+import edu.iu.c212.places.Store;
+import edu.iu.c212.places.games.GuessTheNumberGame;
+import edu.iu.c212.places.games.TriviaGame;
+import edu.iu.c212.places.games.blackjack.BlackjackGame;
+import edu.iu.c212.places.games.hangman.HangmanGame;
 import edu.iu.c212.utils.FileUtils;
 
 public class Arcade implements IArcade{
@@ -19,7 +26,18 @@ public class Arcade implements IArcade{
     public Arcade() {
         currentUser = getUserOnArcadeEntry();
         allUsers = getUserSaveDataFromFile();
-        allPlaces = getAllPlaces();
+        allPlaces = new ArrayList<Place>();
+
+        allPlaces.add(new Lobby(Places.LOBBY));
+        allPlaces.add(new Store(Places.STORE));
+        allPlaces.add(new Inventory(Places.INVENTORY));
+        allPlaces.add(new GuessTheNumberGame(Places.GUESSTHENUMBERGAME));
+        allPlaces.add(new TriviaGame(Places.TRIVIAGAME));
+        allPlaces.add(new BlackjackGame(Places.BLACKJACKGAME));
+        allPlaces.add(new HangmanGame(Places.HANGMANGAME));
+
+        transitionArcadeState(Places.LOBBY);
+
     }
 
     @Override
