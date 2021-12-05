@@ -35,7 +35,7 @@ public class ConsoleUtils {
     /**
      * This
      * @param menuTitle The title of the menu
-     * @param options The options to choose from
+     * @param allplaces The options to choose from
      * @param shouldUserSelectAnOption If this is an informational menu (no reading user input, this should be false).
      * @param <T> The type of the options.
      * @return The selected option, if any, or else null.
@@ -48,7 +48,7 @@ public class ConsoleUtils {
 
         if (shouldUserSelectAnOption) {
             System.out.println("Please select an option by its number:");
-            int enteredIndex = readIntegerLineFromConsoleOrElseComplainAndRetry(number -> number - 1 >= 0 && number - 1 < options.size(), "You need to enter a valid option") - 1;
+            int enteredIndex = readIntegerLineFromConsoleOrElseComplainAndRetry(number -> number - 1 >= 0 && number - 1 < allplaces.size(), "You need to enter a valid option") - 1;
             return options.get(enteredIndex);
         } else return null;
     }

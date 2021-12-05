@@ -7,5 +7,7 @@ public class Places {
     public static final String TRIVIAGAME = "Trivia";
     public static final String BLACKJACKGAME = "Blackjack";
     public static final String HANGMANGAME = "Hangman";
-    public static final String GUESSTHENUMBERGAME = "GuessNumber";   
+    public static final String GUESSTHENUMBERGAME = "GuessNumber";
+    
+    public static final String[] ALLPLACES = {LOBBY, INVENTORY, STORE, TRIVIAGAME, BLACKJACKGAME, HANGMANGAME, GUESSTHENUMBERGAME};
 }
