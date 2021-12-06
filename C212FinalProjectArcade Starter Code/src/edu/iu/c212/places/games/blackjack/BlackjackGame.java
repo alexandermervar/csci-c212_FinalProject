@@ -132,8 +132,21 @@ public class BlackjackGame extends Game {
             //TODO: Check for winner
             // If the dealer and player tie, the entryFee is refunded to the player
             // If the player wins, the prize is given to the player
-            
-            // After winner is established, transition to the LOBBY
+
+            if (player.getBestTotal() > dealer.getBestTotal()) {
+                totalsLabel.setText("You win!");
+                //TODO: Give the player the prize
+                getArcade().transitionArcadeState(Places.LOBBY);
+            }
+            else if (player.getBestTotal() < dealer.getBestTotal()) {
+                totalsLabel.setText("You lose!");
+                getArcade().transitionArcadeState(Places.LOBBY);
+            }
+            else {
+                totalsLabel.setText("Tie!");
+                //TODO: Return the entryFee to the player
+                getArcade().transitionArcadeState(Places.LOBBY);
+            }
         }
             
     } 
