@@ -130,6 +130,10 @@ public class BlackjackGame extends Game {
             dealer.play();
 
             //TODO: Check for winner
+            // If the dealer and player tie, the entryFee is refunded to the player
+            // If the player wins, the prize is given to the player
+            
+            // After winner is established, transition to the LOBBY
         }
             
     } 
