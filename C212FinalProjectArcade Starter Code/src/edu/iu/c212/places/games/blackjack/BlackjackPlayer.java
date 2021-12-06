@@ -14,7 +14,7 @@ public class BlackjackPlayer extends BlackJackParticipant{
             return Integer.toString(handTotals[0]);
         }
         else if (handTotals[0] != handTotals[1] && handTotals[0] <= 21 && handTotals[1] <= 21) {
-            return Integer.toString(handTotals[0]) + " or " + Integer.toString(handTotals[1]);
+            return Integer.toString(handTotals[0]) + " | " + Integer.toString(handTotals[1]);
         }
         else {
             if (handTotals[0] > 21) {
@@ -28,7 +28,10 @@ public class BlackjackPlayer extends BlackJackParticipant{
 
     public int getBestTotal() {
         // corrected implementation of getBestTotal()
-        if (handTotals[0] == handTotals[1]) {
+        if (handTotals[0] > 21 && handTotals[1] > 21) {
+            return handTotals[0];
+        }
+        else if (handTotals[0] == handTotals[1]) {
             return handTotals[0];
         }
         else if (handTotals[0] != handTotals[1] && handTotals[0] <= 21 && handTotals[1] <= 21) {
