@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Cards {
     
-    private static ArrayList<Integer> deck;
+    private ArrayList<Integer> deck;
 
-    public static ArrayList<Integer> getDeck() {
+    public ArrayList<Integer> getDeck() {
         return deck;
     }
 
