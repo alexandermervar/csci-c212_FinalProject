@@ -67,7 +67,7 @@ public class HangmanGame extends Game implements IHangmanGame {
                 } 
             }
 
-            System.out.println("The word was" + randomWord + " You did not successfully guess the word, try again next time!");
+            System.out.println("The word was \"" + randomWord + ".\" You did not successfully guess the word, try again next time!");
             getArcade().transitionArcadeState(Places.LOBBY);
         } catch (IOException e) {
             e.printStackTrace();

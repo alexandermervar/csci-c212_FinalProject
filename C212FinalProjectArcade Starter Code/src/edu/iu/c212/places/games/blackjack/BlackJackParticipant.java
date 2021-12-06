@@ -29,13 +29,13 @@ public abstract class BlackJackParticipant {
                 cards.add(i + 2);
             }
         }
-        for (int k = 0; i < 12; i++) {
+        for (int k = 0; k < 12; k++) {
             cards.add(10);
             cards.add(10);
             cards.add(10);
             cards.add(10);
         }
-        for (int l = 0; i < 4; i++) {
+        for (int l = 0; il < 4; l++) {
             cards.add(11);
             cards.add(11);
             cards.add(11);

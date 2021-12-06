@@ -42,6 +42,7 @@ public class GuessTheNumberGame extends Game{
 
         if (userGuess == numberToGuess) {
             System.out.println("Congratulations, you correctly guessed the number!");
+            System.out.println("The number was: " + numberToGuess);
             System.out.println("You guessed it within " + numberOfGuesses + " tries, so you get $10");
             System.out.println("----------");
 
@@ -51,6 +52,7 @@ public class GuessTheNumberGame extends Game{
             getArcade().transitionArcadeState(Places.LOBBY);
         } else {
             System.out.println("You didn't guess the number in time.");
+            System.out.println("The number was: " + numberToGuess);
             System.out.println("You lost $" + getEntryFee() + ".");
             System.out.println("----------");
 
