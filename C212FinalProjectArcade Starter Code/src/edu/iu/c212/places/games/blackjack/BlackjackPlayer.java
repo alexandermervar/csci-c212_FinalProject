@@ -2,13 +2,8 @@ package edu.iu.c212.places.games.blackjack;
 
 public class BlackjackPlayer extends BlackJackParticipant{
 
-<<<<<<< HEAD
     public BlackjackPlayer(Cards deck) {
         super(deck);
-=======
-    public BlackjackPlayer() {
-        super(cards.getDeck());
->>>>>>> d95df4923a79ce567c866222001633c2298d1a39
         hit();
         hit();
     }
