@@ -25,7 +25,7 @@ public class BlackjackGame extends Game {
     private BlackjackPlayer player;
     private BlackjackDealer dealer;
 
-    public BlackjackGame(Arcade arc) {
+    public BlackjackGame(Arcade arcade) {
         //TODO
         // Call the superclass constructor
         setPlaceName(Places.BLACKJACKGAME);
@@ -33,7 +33,7 @@ public class BlackjackGame extends Game {
         //TODO: setEntryFee() and setPrize()
         setEntryFee();
         setPrize();
-        setArcade(arc);
+        setArcade(arcade);
         player = new BlackjackPlayer();
         dealer = new BackjackDealer();
     }

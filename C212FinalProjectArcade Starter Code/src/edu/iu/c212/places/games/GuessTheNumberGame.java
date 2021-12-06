@@ -1,13 +1,15 @@
 package edu.iu.c212.places.games;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Places;
 import edu.iu.c212.utils.ConsoleUtils;
 
 public class GuessTheNumberGame extends Game{
 
-    public GuessTheNumberGame(String placeName) {
-        setPlaceName(placeName);
+    public GuessTheNumberGame(Arcade arcade) {
+        setArcade(arcade);
+        setPlaceName(Places.GUESSTHENUMBERGAME);
         setEntryFee(5.0);
         setPrize(10.0);
     }

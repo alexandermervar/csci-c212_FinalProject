@@ -3,6 +3,7 @@ package edu.iu.c212.places;
 import java.util.Arrays;
 import java.util.List;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.Item;
 import edu.iu.c212.models.User;
 import edu.iu.c212.utils.ConsoleUtils;
@@ -18,8 +19,9 @@ public class Store extends Place{
         }
     }
 
-    public Store(String placeName) {
-        setPlaceName(placeName);
+    public Store(Arcade arcade) {
+        setArcade(arcade);
+        setPlaceName(Places.STORE);
         setEntryFee(0.0);
         setIsGame(false);
     }

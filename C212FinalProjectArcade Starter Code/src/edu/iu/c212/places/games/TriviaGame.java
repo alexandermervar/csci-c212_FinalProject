@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.User;
 import edu.iu.c212.places.Places;
 import edu.iu.c212.utils.ConsoleUtils;
@@ -12,8 +13,9 @@ import edu.iu.c212.utils.http.*;
 public class TriviaGame extends Game{
 
 
-    public TriviaGame(String placeName) {
-        setPlaceName(placeName);
+    public TriviaGame(Arcade arcade) {
+        setArcade(arcade);
+        setPlaceName(Places.TRIVIAGAME);
         setEntryFee(0.0);
         setPrize(2.0);
     }

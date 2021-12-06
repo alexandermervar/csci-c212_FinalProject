@@ -29,18 +29,14 @@ public class Arcade implements IArcade{
         currentUser = getUserOnArcadeEntry();
         allPlaces = new ArrayList<Place>();
 
-        allPlaces.add(new Lobby(Places.LOBBY));
-        allPlaces.add(new Store(Places.STORE));
-        allPlaces.add(new Inventory(Places.INVENTORY));
-        allPlaces.add(new GuessTheNumberGame(Places.GUESSTHENUMBERGAME));
-        allPlaces.add(new TriviaGame(Places.TRIVIAGAME));
-        allPlaces.add(new BlackjackGame(Places.BLACKJACKGAME));
-        allPlaces.add(new HangmanGame(Places.HANGMANGAME));
-        allPlaces.add(new Exit(Places.EXIT));
-
-        for (Place place : allPlaces) {
-            place.setArcade(this);
-        }
+        allPlaces.add(new Lobby(this));
+        allPlaces.add(new Store(this));
+        allPlaces.add(new Inventory(this));
+        allPlaces.add(new GuessTheNumberGame(this));
+        allPlaces.add(new TriviaGame(this));
+        allPlaces.add(new BlackjackGame(this));
+        allPlaces.add(new HangmanGame(this));
+        allPlaces.add(new Exit(this));
 
         transitionArcadeState(Places.LOBBY);
 

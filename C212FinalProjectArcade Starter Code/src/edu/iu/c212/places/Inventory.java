@@ -3,13 +3,15 @@ package edu.iu.c212.places;
 import java.util.HashMap;
 import java.util.List;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.Item;
 import edu.iu.c212.models.User;
 
 public class Inventory extends Place {
 
-    public Inventory(String placeName) {
-        setPlaceName(placeName);
+    public Inventory(Arcade arcade) {
+        setArcade(arcade);
+        setPlaceName(Places.INVENTORY);
         setEntryFee(0);
         setIsGame(false);
     }

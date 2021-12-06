@@ -2,13 +2,15 @@ package edu.iu.c212.places;
 
 import java.util.List;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.User;
 import edu.iu.c212.utils.ConsoleUtils;
 
 public class Lobby extends Place{
 
-    public Lobby(String placeName) {
-        setPlaceName(placeName);
+    public Lobby(Arcade arc) {
+        setArcade(arc);
+        setPlaceName(Places.LOBBY);
         setEntryFee(0.0);
         setIsGame(false);
     }

@@ -1,11 +1,13 @@
 package edu.iu.c212.places;
 
+import edu.iu.c212.Arcade;
 import edu.iu.c212.models.User;
 
 public class Exit extends Place{
 
-    public Exit(String placeName) {
-        setPlaceName(placeName);
+    public Exit(Arcade arcade) {
+        setArcade(arcade);
+        setPlaceName(Places.EXIT);
         setEntryFee(0);
         setIsGame(false);
     }
