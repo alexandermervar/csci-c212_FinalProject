@@ -102,7 +102,7 @@ public class Arcade implements IArcade{
         User newUser = new User(username, 500, new ArrayList<>());
         allUsers.add(newUser);
         saveUsersToFile();
-        System.out.println("Welcom " + username + "!");
+        System.out.println("Welcome " + username + "!");
 
         return newUser;
     }
