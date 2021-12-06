@@ -28,7 +28,7 @@ public class Inventory extends Place {
                 items.put(item, items.get(item) + 1);
         }
 
-        System.out.println("Hello, " + user.getUsername() + "! Your inventory looks like this");
+        System.out.println("Hello, " + user.getUsername() + "! Your inventory looks like this:");
         for (Item item : items.keySet()) {
             int amount = items.get(item);
             double itemValue = item.getValue();
@@ -39,8 +39,9 @@ public class Inventory extends Place {
         System.out.println("Current balance is: $" + user.getBalance());
         System.out.println("Total Net worth: $" + netWorth);
 
-        if (inventorySize == 3)
+        if (inventorySize == 3) {
             System.out.println("REMEMBER! You can only have 3 items at a time. Sell one by going to the Store");
+        }
         
         getArcade().transitionArcadeState(Places.LOBBY);
     }
