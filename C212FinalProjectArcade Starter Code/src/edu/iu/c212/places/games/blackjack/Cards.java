@@ -12,6 +12,9 @@ public class Cards {
 
     public Cards() {
         // add integers to the cards variable representing each card
+
+        deck = new ArrayList<Integer>();
+        
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 4; j++) {
                 deck.add(i + 2);

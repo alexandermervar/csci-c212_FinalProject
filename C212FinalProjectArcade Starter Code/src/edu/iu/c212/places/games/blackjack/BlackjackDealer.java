@@ -15,7 +15,8 @@ public class BlackjackDealer extends BlackJackParticipant{
         return shownCard + " + ???";
     }
 
-    public BlackjackDealer() {
+    public BlackjackDealer(Cards deck) {
+        super(deck);
         dealerBest = -1;
         handTotals = new int[2];
         hit();

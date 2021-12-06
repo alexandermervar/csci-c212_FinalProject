@@ -31,11 +31,14 @@ public class BlackjackGame extends Game {
         setPlaceName(Places.BLACKJACKGAME);
 
         //TODO: setEntryFee() and setPrize()
-        setEntryFee();
-        setPrize();
+        setEntryFee(0);
+        setPrize(0);
         setArcade(arcade);
-        player = new BlackjackPlayer();
-        dealer = new BackjackDealer();
+
+        Cards deck = new Cards();
+
+        player = new BlackjackPlayer(deck);
+        dealer = new BlackjackDealer(deck);
     }
 
     @Override
@@ -45,7 +48,7 @@ public class BlackjackGame extends Game {
         // Set up and display the JFrame as in Lab08
 
         //TODO: Add a way to display the dealer's hands with text "Dealer has # + ???" where # is a number
-        dealerLabel.setText("Dealer has " +  + " + ???");
+        dealerLabel.setText("Dealer has " + " + ???");
 
         totalsLabel.setText("Total(s): " + player.getCurrentTotalsString());
 
