@@ -8,6 +8,11 @@ public abstract class BlackJackParticipant {
     protected int[] handTotals;
     public abstract int getBestTotal();
 
+    public BlackJackParticipant(ArrayList<Integer> cards) {
+        this.cards = cards;
+        handTotals = new int[2];
+    }
+
     // Getters for the cards and handTotals
     public ArrayList<Integer> getCards() {
         return cards;
@@ -15,37 +20,16 @@ public abstract class BlackJackParticipant {
     public int[] getHandTotals() {
         return handTotals;
     }
-
-
-    public BlackJackParticipant() {
-        cards = new ArrayList<Integer>();
-        handTotals = new int[2];
-        // add integers to the cards variable representing each card
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 4; j++) {
-                cards.add(i + 2);
-                cards.add(i + 2);
-                cards.add(i + 2);
-                cards.add(i + 2);
-            }
-        }
-        for (int k = 0; k < 12; k++) {
-            cards.add(10);
-            cards.add(10);
-            cards.add(10);
-            cards.add(10);
-        }
-        for (int l = 0; il < 4; l++) {
-            cards.add(11);
-            cards.add(11);
-            cards.add(11);
-            cards.add(11);
-        }
+    public void setCards(ArrayList<Integer> cards) {
+        this.cards = cards;
     }
 
     public void hit() {
         // Add the value(s) of a randomly-chosen card to handTotals, without replacement
-        int selectedCardIndex = (int) Math.random() * 52;
+        
+        // Select a random index value from the cards ArrayList
+        int selectedCardIndex = (int) (Math.random() * cards.size());
+
         int selectedCard = cards.get(selectedCardIndex);
         cards.remove(selectedCardIndex);
         if (selectedCard == 11) {
