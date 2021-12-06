@@ -25,7 +25,7 @@ public class HangmanGame extends Game implements IHangmanGame {
 
         int incorrectGuessCount = 0;
 
-        System.out.println("Welcome to hangman! Your task is to guess a random word. You are able to guess letters to reveal parts of the word. If you guess a letter that is not in the word 6 times you lose the game!");
+        System.out.println("Welcome to hangman! Your task is to guess a random word. You are able to guess letters to reveal parts of the word. \nIf you guess a letter that is not in the word over 6 times you lose the game!");
 
         try {
             String randomWord = HttpUtils.getRandomHangmanWord();
@@ -34,8 +34,10 @@ public class HangmanGame extends Game implements IHangmanGame {
             while (incorrectGuessCount <= 6) {
                 System.out.println("You have guessed " + incorrectGuessCount + " times incorrectly" + guessedChars.toString());
                 System.out.println(getBlurredWord(guessedChars, randomWord));
+
+                String sGuess = ConsoleUtils.readLineFromConsole().toLowerCase();
                 
-                Character guess = ConsoleUtils.readLineFromConsole().toLowerCase().charAt(0);
+                Character guess = sGuess.isEmpty() ? ' ': sGuess.charAt(0);
 
                 
                 if (validLex.contains(guess)) {
