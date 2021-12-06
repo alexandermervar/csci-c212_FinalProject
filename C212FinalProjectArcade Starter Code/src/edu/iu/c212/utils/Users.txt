@@ -1,2 +1,2 @@
-amervar|500.0|
+amervar|504.0|
 user1|500.0|

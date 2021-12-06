@@ -24,15 +24,13 @@ public class BlackjackGame extends Game {
     public static JButton stay = new JButton("Stay!");
     private BlackjackPlayer player;
     private BlackjackDealer dealer;
+    public boolean isRunning = true;
 
     public BlackjackGame(Arcade arcade) {
-        //TODO
-        // Call the superclass constructor
         setPlaceName(Places.BLACKJACKGAME);
-
         //TODO: setEntryFee() and setPrize()
-        setEntryFee(0);
-        setPrize(0);
+        setEntryFee(10.0);
+        setPrize(50.0);
         setArcade(arcade);
 
         Cards deck = new Cards();
@@ -43,7 +41,6 @@ public class BlackjackGame extends Game {
 
     @Override
     public void onEnter(User user) {
-        //TODO
         // Initialize player, dealer, and user members
         // Set up and display the JFrame as in Lab08
 
@@ -80,6 +77,10 @@ public class BlackjackGame extends Game {
         frame.getContentPane().add(mainPanel);
         frame.pack();
         frame.setVisible(true);
+        
+        if (!isRunning) {
+            getWinner(user, player, dealer);
+        }
     }
 
     private class HitButtonListener implements ActionListener {   
@@ -114,6 +115,7 @@ public class BlackjackGame extends Game {
             player.hit();
             totalsLabel.setText("Total(s): " + player.getCurrentTotalsString());
             if (player.getBestTotal() > 21) {
+                isRunning = false;
                 hit.setEnabled(false);
                 stay.setEnabled(false);
                 totalsLabel.setText("BUST!");
@@ -130,26 +132,28 @@ public class BlackjackGame extends Game {
             hit.setEnabled(false);
             stay.setEnabled(false);
             dealer.play();
-
-            //TODO: Check for winner
-            // If the dealer and player tie, the entryFee is refunded to the player
-            // If the player wins, the prize is given to the player
-
-            if (player.getBestTotal() > dealer.getBestTotal()) {
-                totalsLabel.setText("You win!");
-                //TODO: Give the player the prize
-                getArcade().transitionArcadeState(Places.LOBBY);
-            }
-            else if (player.getBestTotal() < dealer.getBestTotal()) {
-                totalsLabel.setText("You lose!");
-                getArcade().transitionArcadeState(Places.LOBBY);
-            }
-            else {
-                totalsLabel.setText("Tie!");
-                //TODO: Return the entryFee to the player
-                getArcade().transitionArcadeState(Places.LOBBY);
-            }
+            isRunning = false;
         }
             
+    }
+
+    public void getWinner(User user, BlackjackPlayer player, BlackjackDealer dealer) {
+        // If the dealer and player tie, the entryFee is refunded to the player
+        // If the player wins, the prize is given to the player
+
+        if (player.getBestTotal() > dealer.getBestTotal()) {
+            System.out.println("You Win!");
+            user.setBalance(user.getBalance() + getPrize());
+            getArcade().transitionArcadeState(Places.LOBBY);
+        }
+        else if (player.getBestTotal() < dealer.getBestTotal()) {
+            System.out.println("You Lose!");
+            getArcade().transitionArcadeState(Places.LOBBY);
+        }
+        else {
+            System.out.println("Tie!");
+            user.setBalance(user.getBalance() + getEntryFee());
+            getArcade().transitionArcadeState(Places.LOBBY);
+        }
     } 
 }
