@@ -47,8 +47,12 @@ public class BlackjackGame extends Game {
         // Initialize player, dealer, and user members
         // Set up and display the JFrame as in Lab08
 
+<<<<<<< HEAD
         //TODO: Add a way to display the dealer's hands with text "Dealer has # + ???" where # is a number
         dealerLabel.setText("Dealer has " + " + ???");
+=======
+        dealerLabel.setText("Dealer has " + dealer.getShownCard() + " + ???");
+>>>>>>> d95df4923a79ce567c866222001633c2298d1a39
 
         totalsLabel.setText("Total(s): " + player.getCurrentTotalsString());
 
