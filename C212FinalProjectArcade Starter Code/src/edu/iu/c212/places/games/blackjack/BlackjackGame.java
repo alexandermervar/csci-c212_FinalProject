@@ -28,8 +28,7 @@ public class BlackjackGame extends Game {
 
     public BlackjackGame(Arcade arcade) {
         setPlaceName(Places.BLACKJACKGAME);
-        //TODO: setEntryFee() and setPrize()
-        setEntryFee(10.0);
+        setEntryFee(20.0);
         setPrize(50.0);
         setArcade(arcade);
 
