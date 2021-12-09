@@ -63,7 +63,7 @@ public class Store extends Place{
 
             System.out.println("You will only get $" + sellPrice + " back if you sell this item");
 
-            boolean confirmation = ConsoleUtils.printMenuToConsole("Are you sure you want to buy this item", confirm, true);
+            boolean confirmation = ConsoleUtils.printMenuToConsole("Are you sure you want to sell this item", confirm, true);
             if (confirmation) {
                 user.setBalance(user.getBalance() + sellPrice);
                 user.getInventory().remove(buyChoice);
