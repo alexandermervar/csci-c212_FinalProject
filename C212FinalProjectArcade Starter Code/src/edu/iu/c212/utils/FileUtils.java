@@ -63,6 +63,7 @@ public class FileUtils {
             User user = new User(userData[0], Double.parseDouble(userData[1]), userInventory);
             users.add(user);
         }
+        scan.close();
         return users;
     }
 }
