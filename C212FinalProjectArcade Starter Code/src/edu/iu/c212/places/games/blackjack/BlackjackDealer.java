@@ -73,7 +73,7 @@ public class BlackjackDealer extends BlackJackParticipant{
             dealerBest = -1;
         }
         else {
-        dealerBest = getBestTotal();
+            dealerBest = getBestTotal();
         }
     }
 }
