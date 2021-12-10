@@ -76,6 +76,7 @@ public class Arcade implements IArcade{
                 }
                 else {
                     currentUser.setBalance(userBalance - entryFee);
+                    saveUsersToFile();
                     place.onEnter(currentUser);
                 }
             }
