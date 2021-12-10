@@ -14,8 +14,9 @@ public class Exit extends Place{
 
     @Override
     public void onEnter(User user) {
-        System.out.println("Thanks for playing "  + user.getUsername() + "!");    
-        
+        System.out.println("Thanks for playing "  + user.getUsername() + "!"); 
+        getArcade().saveUsersToFile();   
+    
         System.exit(0);
     }
     
