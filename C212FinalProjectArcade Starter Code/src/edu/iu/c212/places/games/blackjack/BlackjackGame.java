@@ -163,11 +163,11 @@ public class BlackjackGame extends Game {
         if (player.getBestTotal() > 21) {
             System.out.println("Bust!");
         }
-        else if (player.getBestTotal() > dealer.getBestTotal()) {
+        else if (player.getBestTotal() > dealer.getBestTotal() || (player.getBestTotal() < dealer.getBestTotal() && dealer.getBestTotal() > 21)) {
             System.out.println("You Win! Dealer had a " + dealer.getDealerBest());
             user.setBalance(user.getBalance() + getPrize());
         }
-        else if (player.getBestTotal() < dealer.getBestTotal()) {
+        else if (player.getBestTotal() < dealer.getBestTotal() && dealer.getBestTotal() <= 21) {
             System.out.println("You Lose! Dealer had a " + dealer.getDealerBest());
         }
         else {
